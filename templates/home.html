@@ -1,0 +1,215 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+* {
+    box-sizing: border-box;
+}
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    width: 60vw;
+    height: 100vh;
+}
+
+
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.left {
+    width: 75%;
+}
+
+.right {
+    border: 1px solid #ccc;
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+input[type=text], select {
+    width: 100%;
+    /* padding: 12px 20px; */
+    /* margin: 8px 0; */
+    display: inline-block;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* box-sizing: border-box; */
+}
+
+input[type=submit] {
+    width: 100%;
+    text-align: center;
+    background-color: #6F3CBC;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #6F3CBC;
+}
+
+input[type=option] {
+    width: 100%;
+    text-align: center;
+    background-color: #ccc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;}
+
+    input[type=option]:hover {
+        background-color: #6F3CBC;
+    }
+div {
+    border-radius: 5px;
+    /* background-color: #f2f2f2; */
+    padding: 20px;
+}
+
+/*Making the check boxes look nice*/
+
+/*Making slider look nice*/
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #acacac;
+    cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #6F3CBC;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="column left" style="background-color:#fff;">
+            <p align="left"><!--webbot bot="HTMLMarkup" startspan --><form class="wordcountform">
+                <textarea id="wordcounter"></textarea>
+            </form>  </div>
+
+            <div class="column right" style="background-color:#fff;">
+                <div id="counteroutput"></div>
+                <div class="slidecontainer">
+  <p>Size</p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</div>
+                <input type="checkbox" name="countPref" value="countPref" checked> Count as I type<br><br>
+                <input type="checkbox" name="spelling" value="spelling"> Spelling/Grammer<br><br>
+                        <label for="language"></label>
+                        <select id="language" name="language">
+                            <option value="English-am">English</option>
+                            <option value="Chinese">中文</option>
+                            <option value="Hindi">हिंदी</option>
+                            <option value="Español">Español</option>
+                        </select>
+
+                        <label for="font"></label>
+                        <select id="font" name="font">
+                            <option value="georgia">Georgia</option>
+                            <option value="calibri">Calibri</option>
+                            <option value="timesNewRoman">Times New Roman</option>
+                            <option value="arial">Arial</option>
+                        </select>
+                        <div>
+                        <input type="option" value="Save to Account">
+                        <input type="option" value="Download Word">
+                        <input type="option" value="Download Text">
+                        <input type="option" value="Download HTML">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="jumbotron text-center">
+        <h1>Wordsmithy</h1>
+        <p><em>ob scriptores</em></p>
+    </div> -->
+
+    <script>
+
+    ;(function(){
+        var wordcounter = document.getElementById('wordcounter')
+        var counteroutput = document.getElementById('counteroutput')
+        var counteroutputFoot = document.getElementById('counteroutput-foot')
+        var words, chars
+
+        function countemwords(){
+            words = (wordcounter.value == '')? 0 : wordcounter.value.split(' ').length
+            chars = wordcounter.value.length
+            counteroutput.innerHTML = 'Words: <span class="outputval">' + words + '</span>'
+            // counteroutput.innerHTML = 'Words: <span class="outputval">' + words + '</span> Chars: <span class="outputval">' + chars + '</span>'
+            // counteroutputFoot.innerHTML = 'Words: ' + words + ' Chars: ' + chars
+        }
+
+        wordcounter.addEventListener('input', function(e){
+            countemwords()
+        }, false)
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            countemwords()
+        }, false)
+
+        window.addEventListener("load", function(event) {
+            countemwords()
+        }, false)
+
+    })()
+
+</script>
+{% endblock %}

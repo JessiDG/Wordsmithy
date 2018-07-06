@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Wordsmithy</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style>
+    body {
+        font-family: "Georgia", Arial, Helvetica, sans-serif;
+    }
+
+/* unvisited link */
+a:link {
+    color: #acacac;
+}
+
+/* visited link */
+a:visited {
+    color: #6F3CBC;
+}
+
+/* mouse over link */
+a:hover {
+    color: #6F3CBC;
+}
+
+/* selected link */
+a:active {
+    color: #6F3CBC;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #6F3CBC;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+    .sidenav {
+        width: 130px;
+        position: right;
+        z-index: 1;
+        top: 20px;
+        left: 10px;
+        background: #eee;
+        overflow-x: hidden;
+        padding: 8px 0;
+    }
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #2196F3;
+        display: block;
+    }
+
+    .sidenav a:hover {
+        color: #6F3CBC;
+    }
+
+    .main {
+        margin-left: 140px; /* Same width as the sidebar + left position in px */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+    </style>
+</head>
+  <body>
+      {% include 'includes/_navbar.html'%}
+      <div class="container">
+      {% block body %}  {% endblock %}
+    </div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
+</script>
+</div>
+  </body>
+</html>
