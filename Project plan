@@ -1,0 +1,27 @@
+MVP:
+- A website that lets me count my words, gives me prompts, does spell check, lets me download in different formats,
+- All settings fold up so they aren't seen
+- Default is a big, white screen
+
+Big
+- Database
+- User logins
+-
+
+Medium
+- Font switching
+- Language switching
+- Spelling/Grammar checking
+- Prompts
+
+Little:
+- Make everything line-up right
+- Make a logo
+- I'm scared of white space, fill this with text so I only have a little bit of room to write
+
+Blockers:
+- Guide: https://www.youtube.com/watch?v=EgnyWxKFwjs
+- mysql
+- switch toggling: https://www.w3schools.com/howto/howto_css_switch.asp,
+https://mdbootstrap.com/components/bootstrap-switch/
+https://1stwebdesigner.com/css-snippets-radio-toggles-switches/
