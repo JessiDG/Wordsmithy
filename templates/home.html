@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-textarea {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-    width: 60vw;
-    height: 100vh;
-}
-
 /* Create two unequal columns that floats next to each other */
 .column {
     float: left;
@@ -37,153 +29,66 @@ textarea {
     clear: both;
 }
 
-input[type=text], select {
-    width: 100%;
-    padding: 7px 6px;
-    background-color: #fff;
-    margin: 0px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 100%;
-    text-align: center;
-    background-color: #6F3CBC;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=option] {
-    width: 100%;
-    text-align: center;
-    background-color: #ccc;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;}
-
-    input[type=option]:hover {
-        background-color: #6F3CBC;
-    }
-
-input[type=submit]:hover {
-    background-color: #6F3CBC;
-}
-
-/*Making slider look nice*/
-.slidecontainer {
-    width: 100%;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 25px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #acacac;
-    cursor: pointer;
-}
-
-.slider::-webkit-slider-thumb:hover {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #6F3CBC;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;
     }
-</style>
-</head>
-<body>
+    </style>
+    </head>
+    <body>
 
     <div class="row">
-        <div class="column left" style="background-color:#fff;">
-            <p align="left"><!--webbot bot="HTMLMarkup" startspan --><form class="wordcountform">
-                <textarea id="wordcounter"></textarea>
-            </form>  </div>
+    <div class="column left" style="background-color:#fff;">
+    <p align="left"><!--webbot bot="HTMLMarkup" startspan --><form class="wordcountform">
+    <textarea id="wordcounter"></textarea>
+    </form>  </div>
 
-            <div class="column right" style="background-color:#fff;">
+    <div class="column right" style="background-color:#fff;">
 
-                <div id="counteroutput"></div>
+    <div id="counteroutput"></div>
+    <div class="slidecontainer">
+    <br>
 
-                <div class="slidecontainer">
-                <br>
-  <p>Font Size</p>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-</div>
-                <input type="checkbox" name="countPref" value="countPref" checked> Count as I type<br><br>
-                <input type="checkbox" name="spelling" value="spelling"> Spelling/Grammer<br><br>
-                        <label for="language"></label>
-                        <select id="language" name="language">
-                            <option value="English-am">English</option>
-                            <option value="Chinese">中文</option>
-                            <option value="Hindi">हिंदी</option>
-                            <option value="Español">Español</option>
-                        </select>
+    <p>Font Size</p>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+    <input type="checkbox" name="countPref" value="countPref" checked> Count as I type<br><br>
+    <input type="checkbox" name="spelling" value="spelling">Check my spelling/grammer<br><br>
+    <input type="checkbox" name="editedWords" value="editedWords">Count edited words<br><br>
+    <input type="button" value="Prompt Roulette" onclick="displayPrompt()"></input>
 
-                        <label for="font"></label>
-                        <select id="font" name="font">
-                            <option value="georgia">Georgia</option>
-                            <option value="calibri">Calibri</option>
-                            <option value="timesNewRoman">Times New Roman</option>
-                            <option value="arial">Arial</option>
-                        </select>
-                        <div>
-                        <input type="option" value="Save to Account">
-                        <input type="option" value="Download Word">
-                        <input type="option" value="Download Text">
-                        <input type="option" value="Download HTML">
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="jumbotron text-center">
-        <h1>Wordsmithy</h1>
-        <p><em>ob scriptores</em></p>
-    </div> -->
+    <div id="prompt"></div>
+    <label for="language"></label>
+    <select id="language" name="language">
+    <option value="English-am">English</option>
+    <option value="Chinese">中文</option>
+    <option value="Hindi">हिंदी</option>
+    <option value="Español">Español</option>
+    </select>
 
+    <label for="font"></label>
+    <select id="font" name="font">
+    <option value="georgia">Georgia</option>
+    <option value="calibri">Calibri</option>
+    <option value="timesNewRoman">Times New Roman</option>
+    <option value="arial">Arial</option>
+    </select>
+    <div>
+    <input type="option" value="Save to Account">
+    <input type="option" value="Download Word">
+    <input type="option" value="Download Text">
+    <input type="option" value="Download HTML">
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
     <script>
-
-
+    function displayPrompt() {
+        var prompts = ["Write everything you remember about your first pet.", "Where is your grandmother right now?", "Describe in detail what falling asleep feels like.", "What is something you wish you'd said today?", "What does an orgasm feel like?", "What do you see from the top of the Eifel tower?","Why do you love your favorite poem?","What is flying like?","How many people are there in Russia?","What do babies smell like?","What does Chinese sound like?","How should Romeo and Juliet ended?","What is the 7th circle of hell?","Should people use turn signals on an empty highway?","If you were anywhere but here, where would you be?","Who was the last person you voted for and why?","What does dirt taste like?","How do you feel about dogs?","What does happiness feel like?","Make a fist. Hold it. What started to hurt first?","How do you pronounce gif?","Would you ever date a man?","Would you ever date a woman?","Would you ever date a non-binary person?","Why haven't you learned to cook?","Who should eat meat?","What's it like to be allergic to peanuts?","What hurts?","What feels good?","What thing has been spinning around in your head today?","What did you wish you'd told her?","What did you wish you'd told him?","What have you got in your pocket(es)?","What does it feel like to ride a motorcycle?","What does getting surgery feel like?","What does getting a papercut feel like?","Are you required to wear certain clothing in your country?","What does it mean to be non-contributing?","What will you never stop doing?","What is dirt?","What is clean?","What do you like to touch?","What do you not like to touch?","George Washington had a heart attack during his inauguartion and Martha Washington took command of the Union. What is different?","Bo Xilai did not gain power in the party. What is different?","Columbus drowned. What is different?","Romans used copper rather than lead in their pipes. What is different?","Jesus spoke Greek, not Aramaic. What is different?","The Prophet Muhammed was born in 1555. What is different?","Buddha was a woman. What is different?","Moses was raised by his parents and not in Pharaoh's house. What is different?","Should babies be breastfed?"];
+        document.getElementById("prompt").innerHTML = '--> ' + prompts[Math.floor(Math.random() * prompts.length)];
+    }
     ;(function(){
-
         var wordcounter = document.getElementById('wordcounter')
         var counteroutput = document.getElementById('counteroutput')
         var counteroutputFoot = document.getElementById('counteroutput-foot')
@@ -197,17 +102,17 @@ input[type=submit]:hover {
 
         wordcounter.addEventListener('input', function(e){
             countemwords()
-        }, false)
+            }, false)
 
-        document.addEventListener("DOMContentLoaded", function(event) {
-            countemwords()
-        }, false)
+            document.addEventListener("DOMContentLoaded", function(event) {
+                countemwords()
+                }, false)
 
-        window.addEventListener("load", function(event) {
-            countemwords()
-        }, false)
+                window.addEventListener("load", function(event) {
+                    countemwords()
+                    }, false)
 
-    })()
+                    })()
 
-</script>
-{% endblock %}
+                    </script>
+                    {% endblock %}
