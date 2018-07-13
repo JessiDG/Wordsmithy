@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <title>Wordsmithy</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <style>
@@ -9,32 +9,33 @@
     }
 
     textarea {
-    	-webkit-box-sizing: border-box;
-    	-moz-box-sizing: border-box;
-    	box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         width: 60vw;
         height: 100vh;
     }
 
-/* unvisited link */
-a:link {
-    color: #acacac;
-}
 
-/* visited link */
-a:visited {
-    color: #6F3CBC;
-}
+    /* unvisited link */
+    a:link {
+        color: #acacac;
+    }
 
-/* mouse over link */
-a:hover {
-    color: #6F3CBC;
-}
+    /* visited link */
+    a:visited {
+        color: #6F3CBC;
+    }
 
-/* selected link */
-a:active {
-    color: #6F3CBC;
-}
+    /* mouse over link */
+    a:hover {
+        color: #6F3CBC;
+    }
+
+    /* selected link */
+    a:active {
+        color: #6F3CBC;
+    }
 
     .sidenav {
         width: 130px;
@@ -65,17 +66,17 @@ a:active {
         padding: 0px 10px;
     }
 
-        input[type=button] {
-            width: 100%;
-            text-align: center;
-            background-color: #ccc;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    input[type=button] {
+        width: 100%;
+        text-align: center;
+        background-color: #ccc;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
 
     input[type=text], select {
@@ -165,21 +166,20 @@ a:active {
             cursor: pointer;
         }
 
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
 
-            @media screen and (max-height: 450px) {
-                .sidenav {padding-top: 15px;}
-                .sidenav a {font-size: 18px;}
-            }
-
-    </style>
-</head>
-  <body>
-      {% include 'includes/_navbar.html'%}
-      <div class="container">
-      {% block body %}  {% endblock %}
+        </style>
+    </head>
+    <body>
+        {% include 'includes/_navbar.html'%}
+        <div class="container">
+            {% block body %}  {% endblock %}
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
+        </script>
     </div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
-</script>
-</div>
-  </body>
+</body>
 </html>
